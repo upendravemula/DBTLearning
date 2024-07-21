@@ -1,0 +1,26 @@
+version : 2
+sources:
+  - name: deptemp
+    database: DBTTRAINING
+    schema: SCH_DBT
+    tables:
+      - name: emp
+        columns:
+          - name: empid
+            description: "Empid is PK"
+            tests:
+              - not_null
+              - unique
+          - name: status
+            description: "status field"  
+            tests:
+              - accepted_values:
+                   values: ['Active','Inactive']
+      - name: dept  
+        description: "department table"
+        columns:
+          - name: deptid
+
+     
+
+ 
